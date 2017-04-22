@@ -33,6 +33,10 @@ Build using latest version of React (v15+), React Router (v4+), Express (v5+), W
 ## Authors
 Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
 
+## Inspirations
+- Universal JavaScript Web Applications with React - Luciano Mammino ([YouTube](https://t.co/HVXd0HMOlC))
+- Container Components - ([Medium Post](https://medium.com/@learnreact/container-components-c0e67432e005))
+
 ## License
 Copyright (c) 2017 Atul Yadav http://github.com/atulmy
 
