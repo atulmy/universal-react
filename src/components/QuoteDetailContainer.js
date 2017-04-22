@@ -12,7 +12,7 @@ class QuotesDetailContainer extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         // `quotes` should be ideally fetched from an AJAX API using `fetch` or `axios`
         quotes.forEach((quote) => {
             if(quote.id == this.props.match.params.id) {

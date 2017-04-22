@@ -12,7 +12,7 @@ class QuotesListContainer extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         // `quotes` should be ideally fetched from an AJAX API using `fetch` or `axios`
         this.setState({ quotes });
     }
