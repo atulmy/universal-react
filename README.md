@@ -1,5 +1,5 @@
 # A simple universal React application with Server Side Rendering
-Build using latest version of React (v15+), React Router (v4+), Express (v5+), Webpack (v2+), Babel Preset ES6
+Build using latest version of React (v15+), React Router (v4+), Redux (v3+), Express (v5+), Webpack (v2+), Babel Preset ES6
 
 ## Features
 - List quotes
