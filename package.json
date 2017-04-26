@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack -d",
-    "start:dev": "export NODE_ENV=development && npm run build:dev && nodemon --exec babel-node -- src/server.js",
+    "start:dev": "export NODE_ENV=development && npm run build:dev && nodemon --exec babel-node -- src/server/index.js",
     "start:dev:universal": "export NODE_ENV=development && npm run start:dev"
   },
   "keywords": [],
@@ -22,10 +22,15 @@
     "webpack": "^2.4.1"
   },
   "dependencies": {
-    "ejs": "^2.5.6",
+    "axios": "^0.16.1",
     "express": "^5.0.0-alpha.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1"
+    "react-helmet": "^5.0.3",
+    "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   }
 }

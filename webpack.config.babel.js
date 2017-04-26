@@ -2,7 +2,7 @@ import path from 'path'
 
 const config = {
     entry: {
-        js: './src/client.js'
+        js: './src/client/index.js'
     },
 
     output: {
