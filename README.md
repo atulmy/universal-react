@@ -18,8 +18,11 @@ Build using latest version of React (v15+), React Router (v4+), Express (v5+), W
 - **react** (v15+, Library for building user interfaces)
 - **react-dom** (v15+, React package for working with the DOM)
 - **react-router-dom** (v4+, A complete routing library for React)
+- **redux** (v3+, Predictable state container for JavaScript apps)
+- **redux-thunk** (v2+, Thunk middleware for Redux)
+- **react-redux** (v5+, Official React bindings for Redux)
+- **react-helmet** (v5+, Manage all of your changes to the document head)
 - **express** (v5.alpha, Fast, unopinionated, minimalist web framework)
-- **ejs** (v2+, Embedded JavaScript templates)
 
 ### devDependencies
 - **babel-cli** (v6+, Babel command line)
