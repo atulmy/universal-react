@@ -47,6 +47,7 @@ Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitte
 ## Inspirations
 - Universal JavaScript Web Applications with React - Luciano Mammino ([YouTube](https://t.co/HVXd0HMOlC))
 - Container Components - ([Medium Post](https://medium.com/@learnreact/container-components-c0e67432e005))
+- React Router 4 SSR example - Ryan Florence [Gist](https://gist.github.com/ryanflorence/efbe562332d4f1cc9331202669763741/)
 
 ## License
 Copyright (c) 2017 Atul Yadav http://github.com/atulmy
