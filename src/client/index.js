@@ -1,22 +1,28 @@
+// Imports
 import React from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-
+import { compose } from 'redux'
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+// App Imports
 import App from './components/App'
 import rootReducer from './reducers/root';
 
-const preloadedState = window.__PRELOADED_STATE__
-delete window.__PRELOADED_STATE__
+// Load initial state from server side
+const initialState = window.__INITIAL_STATE__
+delete window.__INITIAL_STATE__
 
-// Store
+// Create Store
 const store = createStore(
     rootReducer,
-    applyMiddleware(thunk),
-    preloadedState
+    initialState,
+
+    compose(
+        applyMiddleware(thunk),
+    )
 );
 
 const Client = () => (
@@ -27,6 +33,7 @@ const Client = () => (
     </Provider>
 )
 
+// Mount app
 window.onload = () => {
     render(
         <Client />,

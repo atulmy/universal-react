@@ -3,15 +3,18 @@ import { Helmet } from "react-helmet";
 import { connect } from 'react-redux';
 
 import Blogs from './Blogs'
-import { actionBlogFetch } from '../../../actions/blog'
+import { actionBlogsFetch } from '../../../actions/blog'
 
 class BlogsContainer extends Component {
+
     static fetchData({ store }) {
-        return store.dispatch(actionBlogFetch())
+        return store.dispatch(actionBlogsFetch())
     }
 
     componentDidMount() {
-        this.props.actionBlogFetch()
+        console.log('BlogsContainer componentDidMount')
+
+        this.props.actionBlogsFetch()
     }
 
     render() {
@@ -31,8 +34,8 @@ class BlogsContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        blogs: state.reducerBlog // not sure why receiving `reducerBlog` instead of `blogs` !?
+        blogs: state.reducerBlogs // not sure why receiving `reducerBlogs` instead of `blogs` !?
     }
 }
 
-export default connect(mapStateToProps, { actionBlogFetch })(BlogsContainer)
+export default connect(mapStateToProps, { actionBlogsFetch })(BlogsContainer)

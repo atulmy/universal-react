@@ -23,7 +23,6 @@ const server = new Server(app)
 // Static files folder
 app.use(Express.static(path.join(__dirname, '../', 'static')))
 
-
 // Store
 const store = createStore(
     rootReducer,
@@ -52,8 +51,6 @@ app.get('*', (request, response) => {
         status = 404
     }
 
-    console.log(matches)
-
     const promises = matches.map((match) =>  {
         return match.promise
     })
@@ -61,7 +58,8 @@ app.get('*', (request, response) => {
     Promise.all(promises).then((...data) => {
         const initialState = store.getState();
 
-        console.log(initialState.reducerBlog ? initialState.reducerBlog.length : 0)
+        // console.log('initialState.reducerBlogs.length')
+        // console.log(initialState.reducerBlogs ? initialState.reducerBlogs.length : 0)
 
         const context = {}
         const appHtml = renderToString(
