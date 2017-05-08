@@ -1,13 +1,17 @@
+// Imports
 import axios from 'axios'
 
 export const ACTION_TYPE_BLOGS_FETCH = 'ACTION_TYPE_BLOGS_FETCH'
+export const ACTION_TYPE_BLOGS_FETCHING = 'ACTION_TYPE_BLOGS_FETCHING'
 export const ACTION_TYPE_BLOG_FETCH = 'ACTION_TYPE_BLOG_FETCH'
+export const ACTION_TYPE_BLOG_FETCHING = 'ACTION_TYPE_BLOG_FETCHING'
 
 export function actionBlogsFetch() {
-    // console.log('actionBlogsFetch')
-
     return (dispatch) => {
-        console.log('https://jsonplaceholder.typicode.com/posts')
+        dispatch({
+            type: ACTION_TYPE_BLOGS_FETCHING
+        })
+
         return axios.get('https://jsonplaceholder.typicode.com/posts')
             .then((response) => {
                 if(response.status === 200) {
@@ -26,12 +30,11 @@ export function actionBlogsFetch() {
 }
 
 export function actionBlogFetch({ id }) {
-    // console.log('actionBlogFetch')
-
-    // console.log(id)
-
     return (dispatch) => {
-        console.log(`https://jsonplaceholder.typicode.com/posts/${ id }`)
+        dispatch({
+            type: ACTION_TYPE_BLOGS_FETCHING
+        })
+
         return axios.get(`https://jsonplaceholder.typicode.com/posts/${ id }`)
             .then((response) => {
                 if(response.status === 200) {

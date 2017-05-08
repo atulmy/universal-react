@@ -1,6 +1,8 @@
+// Imports
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
+// App Imports
 import Layout from './common/Layout'
 import NotFound from './pages/NotFound'
 import routes from './routes'

@@ -1,9 +1,12 @@
+// Imports
 import React, { Component } from 'react'
 import { Helmet } from "react-helmet";
 import { connect } from 'react-redux';
 
-import Blog from './Blog'
+// App Imports
 import { actionBlogFetch } from '../../../actions/blog'
+import Loading from '../../common/Loading'
+import Blog from './Blog'
 
 class BlogContainer extends Component {
 
@@ -12,7 +15,7 @@ class BlogContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.actionBlogFetch({ id: this.props.match.params.id })
+        this.props.actionBlogFetch({id: this.props.match.params.id})
     }
 
     render() {
@@ -22,7 +25,7 @@ class BlogContainer extends Component {
                     <title>Blog</title>
                 </Helmet>
 
-                <Blog blog={ this.props.blog[0] } />
+                { this.props.blog.loading ? <Loading /> : <Blog blog={ this.props.blog.details } /> }
             </div>
         )
     }
@@ -30,7 +33,7 @@ class BlogContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        blog: state.reducerBlogs // not sure why receiving `reducerBlogs` instead of `blog` !?
+        blog: state.blog
     }
 }
 

@@ -1,7 +1,10 @@
+// Imports
 import { combineReducers } from 'redux'
 
-import reducerBlogs from './blog'
+// App Imports
+import { blogs, blog } from './blogs'
 
 export default combineReducers({
-    reducerBlogs
+    blogs,
+    blog,
 })
