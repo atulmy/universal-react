@@ -22,7 +22,7 @@ class BlogContainer extends Component {
                     <title>Blog</title>
                 </Helmet>
 
-                <Blog blog={ this.props.blog } />
+                <Blog blog={ this.props.blog[0] } />
             </div>
         )
     }

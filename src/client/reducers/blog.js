@@ -8,7 +8,7 @@ export default function reducerBlogs(state = [], action = {}) {
             return action.blogs
 
         case ACTION_TYPE_BLOG_FETCH:
-            return action.blog
+            return [action.blog]
 
         default:
             return state
