@@ -32,7 +32,7 @@ export function actionBlogsFetch() {
 export function actionBlogFetch({ id }) {
     return (dispatch) => {
         dispatch({
-            type: ACTION_TYPE_BLOGS_FETCHING
+            type: ACTION_TYPE_BLOG_FETCHING
         })
 
         return axios.get(`https://jsonplaceholder.typicode.com/posts/${ id }`)
