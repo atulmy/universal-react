@@ -1,6 +1,6 @@
 // Imports
 import React, { Component } from 'react'
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
 // App Imports
@@ -15,7 +15,7 @@ class BlogContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.actionBlogFetch({id: this.props.match.params.id})
+        this.props.actionBlogFetch({ id: this.props.match.params.id })
     }
 
     render() {

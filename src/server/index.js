@@ -80,7 +80,12 @@ app.get('*', (request, response) => {
 
             let html = index(helmet, appHtml, initialState)
 
-            // Finally generated HTML to the client
+            // Reset the state on server
+            store.dispatch({
+                type: 'RESET'
+            })
+
+            // Finally send generated HTML with initial data to the client
             return response.status(status).send(html)
         }
     }, (error) => {
