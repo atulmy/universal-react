@@ -43,7 +43,7 @@ Build using latest version of React (v15+), React Router (v4+), Redux (v3+), Exp
 ## 🎩 Author
 Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
 
-## License
+## 📜 License
 Copyright (c) 2017 Atul Yadav http://github.com/atulmy
 
 The MIT License (http://www.opensource.org/licenses/mit-license.php)
