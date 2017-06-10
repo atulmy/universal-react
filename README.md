@@ -6,11 +6,12 @@ Build using latest version of React (v15+), React Router (v4+), Redux (v3+), Exp
 - [x] View single blog post
 - [x] Container Components ([read here](https://medium.com/@learnreact/container-components-c0e67432e005))
 - [x] Server Side Rendering
+- [x] Cache data in client `state` to prevent re-fetch
 
 ## Running
 - Clone repo `git clone git@github.com:atulmy/universal-react.git universal-react`
 - Install NPM modules `cd universal-react` and `npm install`
-- Run `npm run start:dev:universal`
+- Run `npm run start:dev`
 
 ## Packages Used
 

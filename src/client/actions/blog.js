@@ -20,12 +20,22 @@ export function actionBlogsFetch() {
                         blogs: response.data
                     })
                 } else {
-                    console.error(response);
+                    console.error(response)
                 }
             })
             .catch(function (error) {
-                console.error(error);
-            });
+                console.error(error)
+            })
+    }
+}
+
+export const actionBlogsFetchIfNeeded = () => {
+    return (dispatch, getState) => {
+        let state = getState()
+
+        if(state.blogs.list.length === 0) {
+            return dispatch(actionBlogsFetch())
+        }
     }
 }
 
@@ -43,11 +53,21 @@ export function actionBlogFetch({ id }) {
                         blog: response.data
                     })
                 } else {
-                    console.error(response);
+                    console.error(response)
                 }
             })
             .catch(function (error) {
-                console.error(error);
-            });
+                console.error(error)
+            })
+    }
+}
+
+export const actionBlogFetchIfNeeded = ({ id }) => {
+    return (dispatch, getState) => {
+        let state = getState()
+
+        if(typeof state.blog.details[id] === 'undefined') {
+            return dispatch(actionBlogFetch({ id }))
+        }
     }
 }

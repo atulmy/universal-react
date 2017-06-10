@@ -28,19 +28,21 @@ export function blogs(state = { list: [], error: false, loading: false }, action
     }
 }
 
-export function blog(state = { details: {}, error: false, loading: false }, action = {}) {
+export function blog(state = { details: [], error: false, loading: false }, action = {}) {
     switch (action.type) {
 
         case ACTION_TYPE_BLOG_FETCHING:
             return Object.assign({}, state, {
-                details: {},
+                details: state.details,
                 error: false,
                 loading: true
             })
 
         case ACTION_TYPE_BLOG_FETCH:
+            state.details[action.blog.id] = action.blog;
+
             return Object.assign({}, state, {
-                details: action.blog,
+                details: state.details,
                 error: action.error,
                 loading: false
             })

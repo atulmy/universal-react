@@ -1,10 +1,10 @@
 // Imports
 import React, { Component } from 'react'
-import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet'
+import { connect } from 'react-redux'
 
 // App Imports
-import { actionBlogsFetch } from '../../../actions/blog'
+import { actionBlogsFetch, actionBlogsFetchIfNeeded } from '../../../actions/blog'
 import Loading from '../../common/Loading'
 import Blogs from './Blogs'
 
@@ -15,7 +15,11 @@ class BlogsContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.actionBlogsFetch()
+        this.props.dispatch(actionBlogsFetchIfNeeded())
+    }
+
+    refresh() {
+        this.props.dispatch(actionBlogsFetch())
     }
 
     render() {
@@ -26,6 +30,8 @@ class BlogsContainer extends Component {
                 </Helmet>
 
                 <h1>Blogs</h1>
+
+                <p><button onClick={ this.refresh.bind(this) }>Refresh</button></p>
 
                 { this.props.blogs.loading ? <Loading /> : <Blogs blogs={ this.props.blogs.list } /> }
             </div>
@@ -39,4 +45,4 @@ function blogsState(state) {
     }
 }
 
-export default connect(blogsState, { actionBlogsFetch })(BlogsContainer)
+export default connect(blogsState)(BlogsContainer)

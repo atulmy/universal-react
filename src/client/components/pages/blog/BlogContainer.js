@@ -1,21 +1,29 @@
 // Imports
 import React, { Component } from 'react'
-import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 // App Imports
-import { actionBlogFetch } from '../../../actions/blog'
+import { actionBlogFetch, actionBlogFetchIfNeeded } from '../../../actions/blog'
 import Loading from '../../common/Loading'
 import Blog from './Blog'
 
 class BlogContainer extends Component {
+    constructor(props) {
+        super(props)
+    }
 
     static fetchData({ store, params }) {
-        return store.dispatch(actionBlogFetch({ id: params.id }))
+        return store.dispatch(actionBlogFetch({ id: parseInt(params.id) }))
     }
 
     componentDidMount() {
-        this.props.actionBlogFetch({ id: this.props.match.params.id })
+        this.props.dispatch(actionBlogFetchIfNeeded({ id: parseInt(this.props.match.params.id) }))
+    }
+
+    refresh() {
+        this.props.dispatch(actionBlogFetch({ id: parseInt(this.props.match.params.id) }))
     }
 
     render() {
@@ -25,7 +33,11 @@ class BlogContainer extends Component {
                     <title>Blog</title>
                 </Helmet>
 
-                { this.props.blog.loading ? <Loading /> : <Blog blog={ this.props.blog.details } /> }
+                { this.props.blog.loading || typeof this.props.blog.details[this.props.match.params.id] === 'undefined' ? <Loading /> : <Blog blog={ this.props.blog.details[this.props.match.params.id] } /> }
+
+                <p><button onClick={ this.refresh.bind(this) }>Refresh</button></p>
+
+                <p><Link to={ `/blogs` }>Back to all blogs</Link></p>
             </div>
         )
     }
@@ -37,4 +49,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { actionBlogFetch })(BlogContainer)
+export default connect(mapStateToProps)(BlogContainer)

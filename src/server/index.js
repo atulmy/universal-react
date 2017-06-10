@@ -7,13 +7,13 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { matchPath } from 'react-router'
 import { StaticRouter } from 'react-router-dom'
-import { Helmet } from "react-helmet";
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
+import { Helmet } from "react-helmet"
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 
 // App Imports
-import rootReducer from '../client/reducers/root';
+import rootReducer from '../client/reducers/root'
 import index from './views/index'
 import App from '../client/components/App'
 import routes from '../client/components/routes'
@@ -29,7 +29,7 @@ app.use(Express.static(path.join(__dirname, '../', 'static')))
 const store = createStore(
     rootReducer,
     applyMiddleware(thunk)
-);
+)
 
 // Match any Route
 app.get('*', (request, response) => {
@@ -61,7 +61,7 @@ app.get('*', (request, response) => {
     // Resolve the AJAX calls and render
     Promise.all(promises).then((...data) => {
 
-        const initialState = store.getState();
+        const initialState = store.getState()
         const context = {}
 
         const appHtml = renderToString(
@@ -76,7 +76,7 @@ app.get('*', (request, response) => {
             response.redirect(context.url)
         } else {
             // Get Meta header tags
-            const helmet = Helmet.renderStatic();
+            const helmet = Helmet.renderStatic()
 
             let html = index(helmet, appHtml, initialState)
 
