@@ -1,19 +1,19 @@
-# A simple universal React application with Server Side Rendering
+# 🌐 Simple universal React application with Server Side Rendering
 Build using latest version of React (v15+), React Router (v4+), Redux (v3+), Express (v5+), Webpack (v2+), Babel Preset ES6
 
-## Features
+## 📝 Features
 - [x] List blog posts (async API call using `axios`)
 - [x] View single blog post
 - [x] Container Components ([read here](https://medium.com/@learnreact/container-components-c0e67432e005))
 - [x] Server Side Rendering
 - [x] Cache data in client `state` to prevent re-fetch
 
-## Running
+## ▶️ Running
 - Clone repo `git clone git@github.com:atulmy/universal-react.git universal-react`
 - Install NPM modules `cd universal-react` and `npm install`
 - Run `npm run start:dev`
 
-## Packages Used
+## 📦 Packages Used
 
 ### dependencies
 - **react** (v15+, Library for building user interfaces)
@@ -35,13 +35,13 @@ Build using latest version of React (v15+), React Router (v4+), Redux (v3+), Exp
 - **webpack** (v2+, Module bundler)
 - **nodemon** (v1+, For use during development of a node.js based application)
 
-## Authors
-Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
-
-## Inspirations
+## ⭐️ Resources
 - Universal JavaScript Web Applications with React - Luciano Mammino ([YouTube](https://t.co/HVXd0HMOlC))
 - Container Components - ([Medium Post](https://medium.com/@learnreact/container-components-c0e67432e005))
 - React Router 4 SSR example - Ryan Florence [Gist](https://gist.github.com/ryanflorence/efbe562332d4f1cc9331202669763741/)
+
+## 🎩 Author
+Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
 
 ## License
 Copyright (c) 2017 Atul Yadav http://github.com/atulmy
