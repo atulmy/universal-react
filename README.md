@@ -12,7 +12,7 @@ Build using latest version of React (v15+), React Router (v4+), Redux (v3+), Exp
 ## ▶️ Running
 - Clone repo `git clone git@github.com:atulmy/universal-react.git universal-react`
 - Install NPM modules `cd universal-react` and `npm install`
-- Run `npm run start:dev`
+- Run `npm run start`
 
 ## 📦 Packages Used
 
@@ -35,6 +35,9 @@ Build using latest version of React (v15+), React Router (v4+), Redux (v3+), Exp
 - **babel-preset-react** (v6+, Babel preset for all React plugins)
 - **webpack** (v2+, Module bundler)
 - **nodemon** (v1+, For use during development of a node.js based application)
+
+## 📸 Screenshots
+![screenshot](http://atulmy.com/attachments/images/universal-react.png)
 
 ## ⭐️ Resources
 - Universal JavaScript Web Applications with React - Luciano Mammino ([YouTube](https://t.co/HVXd0HMOlC))
