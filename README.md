@@ -2,8 +2,9 @@
 Build using latest version of React (v15+), React Router (v4+), Redux (v3+), Express (v5+), Webpack (v2+), Babel Preset ES6
 
 ## 📝 Features
-- [x] List blog posts (async API call using `axios`)
-- [x] View single blog post
+- [x] List blogs (async API call using `axios`)
+- [x] View single blog
+- [x] Add blog
 - [x] Container Components ([read here](https://medium.com/@learnreact/container-components-c0e67432e005))
 - [x] Server Side Rendering
 - [x] Cache data in client `state` to prevent re-fetch
