@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:dev": "export NODE_ENV=development && webpack -d",
-    "start:dev": "export NODE_ENV=development && npm run build:dev && nodemon --exec babel-node -- src/server/index.js",
-    "build": "export NODE_ENV=production && webpack -p"
+    "build": "export NODE_ENV=development && webpack -d",
+    "start": "export NODE_ENV=development && npm run build && nodemon --ignore static/ --exec babel-node -- src/server/index.js",
+    "build:prod": "export NODE_ENV=production && webpack -p",
+    "start:prod": "export NODE_ENV=production && npm run build:prod && nodemon --ignore static/ --exec babel-node -- src/server/index.js"
   },
   "keywords": [],
   "author": "",

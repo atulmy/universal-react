@@ -3,7 +3,8 @@ import {
     ACTION_TYPE_BLOGS_FETCH,
     ACTION_TYPE_BLOGS_FETCHING,
     ACTION_TYPE_BLOG_FETCH,
-    ACTION_TYPE_BLOG_FETCHING
+    ACTION_TYPE_BLOG_FETCHING,
+    ACTION_TYPE_BLOG_ADD
 } from '../actions/blog'
 
 export function blogs(state = { list: [], error: false, loading: false }, action = {}) {

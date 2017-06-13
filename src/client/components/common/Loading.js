@@ -1,8 +1,8 @@
 // Imports
 import React from 'react'
 
-const Layout = () => (
+const Loading = () => (
     <p>Loading...</p>
 )
 
-export default Layout
+export default Loading

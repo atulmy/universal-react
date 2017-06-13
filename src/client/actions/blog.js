@@ -5,6 +5,7 @@ export const ACTION_TYPE_BLOGS_FETCH = 'ACTION_TYPE_BLOGS_FETCH'
 export const ACTION_TYPE_BLOGS_FETCHING = 'ACTION_TYPE_BLOGS_FETCHING'
 export const ACTION_TYPE_BLOG_FETCH = 'ACTION_TYPE_BLOG_FETCH'
 export const ACTION_TYPE_BLOG_FETCHING = 'ACTION_TYPE_BLOG_FETCHING'
+export const ACTION_TYPE_BLOG_ADD = 'ACTION_TYPE_BLOG_ADD'
 
 export function actionBlogsFetch() {
     return (dispatch) => {
@@ -69,5 +70,11 @@ export const actionBlogFetchIfNeeded = ({ id }) => {
         if(typeof state.blog.details[id] === 'undefined') {
             return dispatch(actionBlogFetch({ id }))
         }
+    }
+}
+
+export const actionBlogAdd = (blog) => {
+    return (dispatch) => {
+        return axios.post(`https://jsonplaceholder.typicode.com/posts`, blog)
     }
 }

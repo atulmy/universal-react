@@ -15,7 +15,7 @@ const index = (helmet = {}, appHtml = '', initialState = {}) => (
         window.__INITIAL_STATE__ = ${ JSON.stringify(initialState) }
     </script>
     
-    <script type="text/javascript" src="/js/bundle.js"></script>
+    <script type="text/javascript" src="/js/bundle.js?${ Math.random() }"></script>
 </body>
 </html>`
 )
