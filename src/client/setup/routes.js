@@ -2,11 +2,11 @@
 import React from 'react'
 
 // App Imports
-import Home from './pages/Home'
-import About from './pages/About'
-import BlogsContainer from './pages/blog/BlogsContainer'
-import BlogContainer from './pages/blog/BlogContainer'
-import BlogAdd from './pages/blog/BlogAdd'
+import Home from '../components/home/Home'
+import About from '../components/home/About'
+import BlogsContainer from '../components/blog/BlogsContainer'
+import BlogContainer from '../components/blog/BlogContainer'
+import BlogAdd from '../components/blog/BlogAdd'
 
 // Routes
 const routes = [

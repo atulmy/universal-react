@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 
 // App Imports
-import { actionBlogsFetch, actionBlogsFetchIfNeeded } from '../../../actions/blog'
-import Loading from '../../common/Loading'
+import { actionBlogsFetch, actionBlogsFetchIfNeeded } from './api/actions'
+import Loading from '../common/Loading'
 import Blogs from './Blogs'
 
 class BlogsContainer extends Component {

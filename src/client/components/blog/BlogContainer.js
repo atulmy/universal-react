@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 // App Imports
-import { actionBlogFetch, actionBlogFetchIfNeeded } from '../../../actions/blog'
-import Loading from '../../common/Loading'
+import { actionBlogFetch, actionBlogFetchIfNeeded } from './api/actions'
+import Loading from '../common/Loading'
 import Blog from './Blog'
 
 class BlogContainer extends Component {
@@ -28,7 +28,13 @@ class BlogContainer extends Component {
     render() {
         return (
             <div>
-                { this.props.blog.loading || typeof this.props.blog.details[this.props.match.params.id] === 'undefined' ? <Loading /> : <Blog blog={ this.props.blog.details[this.props.match.params.id] } /> }
+                {
+                    this.props.blog.loading || typeof this.props.blog.details[this.props.match.params.id] === 'undefined'
+                        ?
+                    <Loading />
+                        :
+                    <Blog blog={ this.props.blog.details[this.props.match.params.id] } />
+                }
 
                 <p><button onClick={ this.refresh.bind(this) }>Refresh</button></p>
 

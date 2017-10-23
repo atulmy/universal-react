@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Helmet } from "react-helmet"
 
 // App Imports
-import { actionBlogAdd } from '../../../actions/blog'
+import { actionBlogAdd } from './api/actions'
 
 class BlogAdd extends Component {
     constructor(props) {

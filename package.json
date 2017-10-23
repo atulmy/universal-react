@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "axios": "^0.17.0",
+    "babel-preset-stage-2": "^6.24.1",
     "express": "^5.0.0-alpha.6",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

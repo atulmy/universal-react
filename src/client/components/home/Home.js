@@ -10,6 +10,8 @@ const Home = () => (
 
         <h1>Home Page</h1>
 
+        <p>This example uses jsonplaceholder.typicode.com API</p>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fermentum dui. Ut orci quam, ornare sed lorem sed, hendrerit.</p>
     </div>
 )

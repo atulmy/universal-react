@@ -13,10 +13,10 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
 // App Imports
-import rootReducer from '../client/reducers/root'
-import index from './views/index'
+import { rootReducer } from '../client/setup/store'
+import routes from '../client/setup/routes'
 import App from '../client/components/App'
-import routes from '../client/components/routes'
+import index from './views/index'
 
 // Create new server
 const app = new Express()
@@ -25,7 +25,7 @@ const server = new Server(app)
 // Static files folder
 app.use(Express.static(path.join(__dirname, '../', 'static')))
 
-// Store
+// Store (new store for each request)
 const store = createStore(
     rootReducer,
     applyMiddleware(thunk)
