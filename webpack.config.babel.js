@@ -14,7 +14,9 @@ const config = {
         rules: [
             {
                 test: path.join(__dirname, 'src'),
-                use: { loader: 'babel-loader' }
+                use: {
+                    loader: 'babel-loader',
+                }
             }
         ]
     }

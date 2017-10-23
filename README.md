@@ -1,5 +1,5 @@
 # 🌐 Simple universal React application with Server Side Rendering
-Built using latest version of React (v15+), React Router (v4+), Redux (v3+), Express (v5+), Webpack (v2+), Babel Preset ES6
+Built using latest version of React (v16), React Router (v4+), Redux (v3+), Express (v5+), Webpack (v3+), Babel Preset ES6
 
 ## 📝 Features
 - [x] List blogs (async API call using `axios`)
@@ -17,15 +17,15 @@ Built using latest version of React (v15+), React Router (v4+), Redux (v3+), Exp
 ## 📦 Packages Used
 
 ### dependencies
-- **react** (v15+, Library for building user interfaces)
-- **react-dom** (v15+, React package for working with the DOM)
+- **react** (v16, Library for building user interfaces)
+- **react-dom** (v16, React package for working with the DOM)
 - **react-router-dom** (v4+, A complete routing library for React)
 - **redux** (v3+, Predictable state container for JavaScript apps)
 - **redux-thunk** (v2+, Thunk middleware for Redux)
 - **react-redux** (v5+, Official React bindings for Redux)
 - **react-helmet** (v5+, Manage all of your changes to the document head)
-- **express** (v5.alpha, Fast, unopinionated, minimalist web framework)
-- **axios** (v0.16+, Promise based HTTP client for the browser and node.js)
+- **express** (v5.alpha.6, Fast, unopinionated, minimalist web framework)
+- **axios** (v0.17, Promise based HTTP client for the browser and node.js)
 
 ### devDependencies
 - **babel-cli** (v6+, Babel command line)
@@ -33,7 +33,7 @@ Built using latest version of React (v15+), React Router (v4+), Redux (v3+), Exp
 - **babel-loader** (v7+, transpiling JavaScript files using Babel and webpack)
 - **babel-preset-es2015** (v6+, Babel preset for all es2015 plugins)
 - **babel-preset-react** (v6+, Babel preset for all React plugins)
-- **webpack** (v2+, Module bundler)
+- **webpack** (v3+, Module bundler)
 - **nodemon** (v1+, For use during development of a node.js based application)
 
 ## 📸 Screenshots
