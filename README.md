@@ -44,7 +44,7 @@ Built using latest version of React (v16), React Router (v4+), Redux (v3+), Expr
 ## ⭐️ Resources
 - Universal JavaScript Web Applications with React - Luciano Mammino ([YouTube](https://t.co/HVXd0HMOlC))
 - Container Components - ([Medium Post](https://medium.com/@learnreact/container-components-c0e67432e005))
-- React Router 4 SSR example - Ryan Florence [Gist](https://gist.github.com/ryanflorence/efbe562332d4f1cc9331202669763741/)
+- React Router 4 SSR example - Ryan Florence ([Gist](https://gist.github.com/ryanflorence/efbe562332d4f1cc9331202669763741/))
 
 ## 🎩 Author
 Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
