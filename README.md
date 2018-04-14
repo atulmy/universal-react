@@ -35,7 +35,7 @@ Built using latest version of React (v16), React Router (v4+), Redux (v3+), Expr
 - **babel-loader** (v7+, transpiling JavaScript files using Babel and webpack)
 - **babel-preset-es2015** (v6+, Babel preset for all es2015 plugins)
 - **babel-preset-react** (v6+, Babel preset for all React plugins)
-- **webpack** (v3+, Module bundler)
+- **webpack** (v4+, Module bundler)
 - **nodemon** (v1+, For use during development of a node.js based application)
 
 ## 📸 Screenshots
