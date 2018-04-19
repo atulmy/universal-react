@@ -46,6 +46,11 @@ Built using latest version of React (v16), React Router (v4+), Redux (v3+), Expr
 - Container Components - ([Medium Post](https://medium.com/@learnreact/container-components-c0e67432e005))
 - React Router 4 SSR example - Ryan Florence ([Gist](https://gist.github.com/ryanflorence/efbe562332d4f1cc9331202669763741/))
 
+## ⭐ Showcase
+Following projects have been built with or inspired from [universal-react](https://github.com/atulmy/universal-react/)
+- [Crate - Get monthly subscription of trendy clothes and accessories](https://github.com/atulmy/crate)
+- Would really appreciate if you add your project to this list by sending a PR
+
 ## 🎩 Author
 Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
 
