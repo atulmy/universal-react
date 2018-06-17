@@ -48,7 +48,8 @@ Built using latest version of React (v16), React Router (v4+), Redux (v3+), Expr
 
 ## ⭐ Showcase
 Following projects have been built with or inspired from [universal-react](https://github.com/atulmy/universal-react/)
-- [Crate - Get monthly subscription of trendy clothes and accessories](https://github.com/atulmy/crate)
+- Crate - Get monthly subscription of trendy clothes and accessories - [GitHub](https://github.com/atulmy/crate)
+- HIRESMART - Application to streamline hiring process - [GitHub](https://github.com/atulmy/hire-smart)
 - Would really appreciate if you add your project to this list by sending a PR
 
 ## 🎩 Author
