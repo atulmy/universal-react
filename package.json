@@ -13,26 +13,26 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "7.3.4",
+    "@babel/core": "7.4.3",
     "@babel/node": "7.2.2",
-    "@babel/plugin-transform-runtime": "7.3.4",
-    "@babel/preset-env": "7.3.4",
+    "@babel/plugin-transform-runtime": "7.4.3",
+    "@babel/preset-env": "7.4.3",
     "@babel/preset-react": "7.0.0",
     "babel-loader": "8.0.5",
-    "nodemon": "1.18.10",
+    "nodemon": "1.18.11",
     "webpack": "4.29.6",
-    "webpack-cli": "3.2.3"
+    "webpack-cli": "3.3.0"
   },
   "dependencies": {
-    "@babel/runtime": "7.3.4",
+    "@babel/runtime": "7.4.3",
     "axios": "0.18.0",
     "express": "5.0.0-alpha.7",
-    "react": "16.8.4",
-    "react-dom": "16.8.4",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-helmet": "^5.2.0",
-    "react-redux": "^6.0.0",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
+    "react-redux": "^7.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   }
 }
