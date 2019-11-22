@@ -10,27 +10,27 @@ import BlogAdd from '../components/blog/BlogAdd'
 
 // Routes
 const routes = [
-    {
-        path: '/',
-        component: Home,
-        exact: true
-    },
-    {
-        path: '/about',
-        component: About
-    },
-    {
-        path: '/blogs',
-        component: BlogsContainer
-    },
-    {
-        path: '/blog/:id',
-        component: BlogContainer
-    },
-    {
-        path: '/blog-add',
-        component: BlogAdd
-    }
+  {
+    path: '/',
+    component: Home,
+    exact: true
+  },
+  {
+    path: '/about',
+    component: About
+  },
+  {
+    path: '/blogs',
+    component: BlogsContainer
+  },
+  {
+    path: '/blog/:id',
+    component: BlogContainer
+  },
+  {
+    path: '/blog-add',
+    component: BlogAdd
+  }
 ]
 
 export default routes

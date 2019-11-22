@@ -1,21 +1,21 @@
 const index = (helmet = {}, appHtml = '', initialState = {}) => (
-`<!DOCTYPE html>
+  `<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    ${ helmet.title.toString() }
+    ${helmet.title.toString()}
     
     <style> section { border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; margin: 15px 0px }</style>
 </head>
 <body>
-    <main id="app">${ appHtml }</main>
+    <main id="app">${appHtml}</main>
     
     <script>
-        window.__INITIAL_STATE__ = ${ JSON.stringify(initialState) }
+        window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
     </script>
     
-    <script type="text/javascript" src="/js/bundle.js?${ Math.random() }"></script>
+    <script type="text/javascript" src="/js/bundle.js?${Math.random()}"></script>
 </body>
 </html>`
 )

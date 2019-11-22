@@ -8,31 +8,31 @@ import * as blog from '../components/blog/api/state'
 
 // App Reducer
 const appReducer = combineReducers({
-    ...blog
+  ...blog
 })
 
 // Root Reducer
 export const rootReducer = (state, action) => {
-    if (action.type === 'RESET') {
-        state = undefined
-    }
+  if (action.type === 'RESET') {
+    state = undefined
+  }
 
-    return appReducer(state, action)
+  return appReducer(state, action)
 }
 
 // Load initial state from server side
 let initialState
-if(typeof window !== 'undefined') {
-    initialState = window.__INITIAL_STATE__
-    delete window.__INITIAL_STATE__
+if (typeof window !== 'undefined') {
+  initialState = window.__INITIAL_STATE__
+  delete window.__INITIAL_STATE__
 }
 
 // Store
 export const store = createStore(
-    rootReducer,
-    initialState,
+  rootReducer,
+  initialState,
 
-    compose(
-        applyMiddleware(thunk),
-    )
+  compose(
+    applyMiddleware(thunk)
+  )
 )

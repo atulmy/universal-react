@@ -1,48 +1,53 @@
 // Imports
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Helmet } from 'react-helmet'
-import { connect } from 'react-redux'
 
 // App Imports
 import { actionBlogsFetch, actionBlogsFetchIfNeeded } from './api/actions'
 import Loading from '../common/Loading'
 import Blogs from './Blogs'
 
-class BlogsContainer extends Component {
+// Component
+const BlogsContainer = () => {
+  // state
+  const { loading, list } = useSelector(state => state.blogs)
+  const dispatch = useDispatch()
 
-    static fetchData({ store }) {
-        return store.dispatch(actionBlogsFetch())
-    }
+  // on mount/update
+  useEffect(() => {
+    dispatch(actionBlogsFetchIfNeeded())
+  }, [])
 
-    componentDidMount() {
-        this.props.dispatch(actionBlogsFetchIfNeeded())
-    }
+  const refresh = () => {
+    dispatch(actionBlogsFetch())
+  }
 
-    refresh() {
-        this.props.dispatch(actionBlogsFetch())
-    }
+  // render
+  return (
+    <div>
+      <Helmet>
+        <title>Blogs</title>
+      </Helmet>
 
-    render() {
-        return (
-            <div>
-                <Helmet>
-                    <title>Blogs</title>
-                </Helmet>
+      <h1>Blogs</h1>
 
-                <h1>Blogs</h1>
+      <p>
+        <button onClick={refresh}>Refresh</button>
+      </p>
 
-                <p><button onClick={ this.refresh.bind(this) }>Refresh</button></p>
-
-                { this.props.blogs.loading ? <Loading /> : <Blogs blogs={ this.props.blogs.list } /> }
-            </div>
-        )
-    }
+      {
+        loading
+          ? <Loading/>
+          : <Blogs blogs={list}/>}
+      }
+    </div>
+  )
 }
 
-function blogsState(state) {
-    return {
-        blogs: state.blogs
-    }
+// Static method
+BlogsContainer.fetchData = ({ store }) => {
+  return store.dispatch(actionBlogsFetch())
 }
 
-export default connect(blogsState)(BlogsContainer)
+export default BlogsContainer

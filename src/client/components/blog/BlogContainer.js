@@ -1,6 +1,6 @@
 // Imports
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 // App Imports
@@ -8,46 +8,42 @@ import { actionBlogFetch, actionBlogFetchIfNeeded } from './api/actions'
 import Loading from '../common/Loading'
 import Blog from './Blog'
 
-class BlogContainer extends Component {
-    constructor(props) {
-        super(props)
-    }
+// Component
+const BlogContainer = ({ match: { params: { id } } }) => {
+  // state
+  const { loading, details } = useSelector(state => state.blog)
+  const dispatch = useDispatch()
 
-    static fetchData({ store, params }) {
-        return store.dispatch(actionBlogFetch({ id: parseInt(params.id) }))
-    }
+  // on mount/update
+  useEffect(() => {
+    refresh()
+  }, [])
 
-    componentDidMount() {
-        this.props.dispatch(actionBlogFetchIfNeeded({ id: parseInt(this.props.match.params.id) }))
-    }
+  const refresh = () => {
+    dispatch(actionBlogFetchIfNeeded({ id: parseInt(id) }))
+  }
 
-    refresh() {
-        this.props.dispatch(actionBlogFetch({ id: parseInt(this.props.match.params.id) }))
-    }
+  // render
+  return (
+    <div>
+      {
+        loading
+          ? <Loading/>
+          : details && details[id] && <Blog blog={details[id]} />
+      }
 
-    render() {
-        return (
-            <div>
-                {
-                    this.props.blog.loading || typeof this.props.blog.details[this.props.match.params.id] === 'undefined'
-                        ?
-                    <Loading />
-                        :
-                    <Blog blog={ this.props.blog.details[this.props.match.params.id] } />
-                }
+      <p>
+        <button onClick={refresh}>Refresh</button>
+      </p>
 
-                <p><button onClick={ this.refresh.bind(this) }>Refresh</button></p>
-
-                <p><Link to={ `/blogs` }>Back to all blogs</Link></p>
-            </div>
-        )
-    }
+      <p><Link to={`/blogs`}>Back to all blogs</Link></p>
+    </div>
+  )
 }
 
-function mapStateToProps(state) {
-    return {
-        blog: state.blog
-    }
+// Static method
+BlogContainer.fetchData = ({ store, params: { id } }) => {
+  return store.dispatch(actionBlogFetch({ id: parseInt(id) }))
 }
 
-export default connect(mapStateToProps)(BlogContainer)
+export default BlogContainer

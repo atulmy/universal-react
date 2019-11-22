@@ -10,17 +10,17 @@ import App from './components/App'
 
 // Client App
 const Client = () => (
-    <Provider store={ store } key="provider">
-        <Router>
-            <App />
-        </Router>
-    </Provider>
+  <Provider store={store} key="provider">
+    <Router>
+      <App/>
+    </Router>
+  </Provider>
 )
 
 // Mount client app
 window.onload = () => {
-    hydrate(
-        <Client />,
-        document.getElementById('app')
-    )
+  hydrate(
+    <Client/>,
+    document.getElementById('app')
+  )
 }

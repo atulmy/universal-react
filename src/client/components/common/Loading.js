@@ -2,7 +2,7 @@
 import React from 'react'
 
 const Loading = () => (
-    <p>Loading...</p>
+  <p>Loading...</p>
 )
 
 export default Loading

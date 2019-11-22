@@ -27,79 +27,82 @@ app.use(Express.static(path.join(__dirname, '../', 'static')))
 
 // Store (new store for each request)
 const store = createStore(
-    rootReducer,
-    applyMiddleware(thunk)
+  rootReducer,
+  applyMiddleware(thunk)
 )
 
 // Match any Route
 app.get('*', (request, response) => {
 
-    let status = 200
+  let status = 200
 
-    const matches = routes.reduce((matches, route) => {
-        const match = matchPath(request.url, route.path, route)
-        if (match && match.isExact) {
-            matches.push({
-                route,
-                match,
-                promise: route.component.fetchData ? route.component.fetchData({ store, params: match.params }) : Promise.resolve(null)
-            })
-        }
-        return matches
-    }, [])
-
-    // No such route, send 404 status
-    if (matches.length === 0) {
-        status = 404
+  const matches = routes.reduce((matches, route) => {
+    const match = matchPath(request.url, route.path, route)
+    if (match && match.isExact) {
+      matches.push({
+        route,
+        match,
+        promise: route.component.fetchData ? route.component.fetchData({
+          store,
+          params: match.params
+        }) : Promise.resolve(null)
+      })
     }
+    return matches
+  }, [])
 
-    // Any AJAX calls inside components
-    const promises = matches.map((match) =>  {
-        return match.promise
-    })
+  // No such route, send 404 status
+  if (matches.length === 0) {
+    status = 404
+  }
 
-    // Resolve the AJAX calls and render
-    Promise.all(promises).then((...data) => {
+  // Any AJAX calls inside components
+  const promises = matches.map((match) => {
+    return match.promise
+  })
 
-        const initialState = store.getState()
-        const context = {}
+  // Resolve the AJAX calls and render
+  Promise.all(promises).then((...data) => {
 
-        const appHtml = renderToString(
-            <Provider store={ store } key="provider">
-                <StaticRouter context={ context } location={ request.url }>
-                    <App />
-                </StaticRouter>
-            </Provider>
-        )
+    const initialState = store.getState()
+    const context = {}
 
-        if (context.url) {
-            response.redirect(context.url)
-        } else {
-            // Get Meta header tags
-            const helmet = Helmet.renderStatic()
+    const appHtml = renderToString(
+      <Provider store={store} key="provider">
+        <StaticRouter context={context} location={request.url}>
+          <App/>
+        </StaticRouter>
+      </Provider>
+    )
 
-            let html = index(helmet, appHtml, initialState)
+    if (context.url) {
+      response.redirect(context.url)
+    } else {
+      // Get Meta header tags
+      const helmet = Helmet.renderStatic()
 
-            // Reset the state on server
-            store.dispatch({
-                type: 'RESET'
-            })
+      let html = index(helmet, appHtml, initialState)
 
-            // Finally send generated HTML with initial data to the client
-            return response.status(status).send(html)
-        }
-    }, (error) => {
-        console.error(response, error)
-    })
+      // Reset the state on server
+      store.dispatch({
+        type: 'RESET'
+      })
+
+      // Finally send generated HTML with initial data to the client
+      return response.status(status).send(html)
+    }
+  }, (error) => {
+    console.error(response, error)
+  })
 })
 
 // Start Server
 const port = process.env.PORT || 3000
 const env = process.env.NODE_ENV || 'production'
 server.listen(port, (error) => {
-    if(error) {
-        return console.error(error)
-    } else {
-        return console.info(`Server running on http://localhost:${port} [${env}]`)
-    }
+  if (error) {
+    return console.error(error)
+  } else {
+    return console.info(`Server running on http://localhost:${port} [${env}]`)
+  }
 })
